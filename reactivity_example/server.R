@@ -23,6 +23,7 @@ shinyServer(function(input, output) {
     ggplot(babynames %>% filter(name == input$name, sex == input$sex), 
          aes(x = year, y = n, group = 1, colour = sex)) + 
       geom_line() +
+      geom_vline(xintercept = 2000) +
       scale_y_continuous(labels = scales::comma) +
       scale_colour_manual(values = c("F" = "pink", "M" = "blue"), guide = FALSE) +
       labs(x = "", y = "", title = paste0("How much ",
@@ -32,3 +33,7 @@ shinyServer(function(input, output) {
   })
   
 })
+
+
+
+

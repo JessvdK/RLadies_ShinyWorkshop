@@ -9,10 +9,11 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
        textInput("name", h3("What is your name?"),
-                 value = "")
+                 value = "Jessica")
        , radioButtons("sex", h3("What sex are you?"),
                        choices = c("F", "M"),
                        selected = "F")
+       , actionButton("go", "Go!")
     ),
     
     # Main panel to show output
